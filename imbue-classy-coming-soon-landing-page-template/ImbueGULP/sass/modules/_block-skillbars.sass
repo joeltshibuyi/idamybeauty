@@ -1,0 +1,42 @@
+.show-skillbar
+  display: block
+  padding: 0
+  margin-bottom: 2.4rem
+  &:last-of-type
+    margin-bottom: 0
+
+.skillbar
+  position: relative
+  width: 100%
+  height: 4rem
+  border-bottom: 3px solid #E6E6E6
+  &.light
+    border-bottom: 3px solid rgba($bg-light, .1)
+
+.skillbar-title
+  +position(absolute, 0 null null 2px)
+  font: normal 700 2rem/1.1 $caption-font
+  text-transform: uppercase
+  letter-spacing: 0.025em
+  color: $txt-dark
+  height: 4rem
+  line-height: 4.6rem
+  &.light
+    color: $txt-white
+
+.skillbar-bar
+  display: inline-block
+  +position(absolute, null null -3px 0)
+  width: 0px
+  height: 3px
+  background: linear-gradient(-45deg, rgba(198,150,129,1) 0%,rgba(219,190,173,1) 30%,rgba(239,171,146,1) 70%,rgba(198,150,129,1) 100%)
+
+.skill-bar-percent
+  display: block
+  +position(absolute, 0 2px null null)
+  font: normal 700 2rem/1.1 $caption-font
+  color: $txt-dark
+  height: 4rem
+  line-height: 4.6rem
+  &.light
+    color: $txt-white

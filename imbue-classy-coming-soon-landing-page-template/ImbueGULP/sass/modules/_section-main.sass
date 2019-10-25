@@ -1,0 +1,278 @@
+// Main section general styles
+.main-section
+  position: relative
+  padding: 2.4rem
+  &.transparent
+    height: 100%
+    min-height: 546px
+  // hidden state
+  &.is-hidden
+    .main-background-objects
+      transition: all $animation-duration - .3s ease-in-out
+    .logo,
+    .menu-button,
+    .main-background-objects,
+    .main-section__intro,
+    .main-section__media,
+    .aside-content
+      opacity: 0
+      visibility: hidden
+  // notify popup is visible state
+  &.notify-is-visible
+    .logo,
+    .menu-button,
+    .headline,
+    .main-section__media,
+    .aside-content,
+    .gradient-layer
+      opacity: 0
+      visibility: hidden
+  // view change on desktop
+  +MQ(L)
+    height: 100%
+    min-height: 546px
+    padding: 0
+    overflow: hidden
+    z-index: 8
+    // hidden state
+    &.is-hidden
+      .main-background-objects
+        transition: all $animation-duration - .3s ease-in-out
+      .logo,
+      .aside-content
+        opacity: 1
+        visibility: visible
+      .menu-button,
+      .main-section__intro,
+      .main-section__media,
+      .main-background-objects
+        opacity: 0
+        visibility: hidden
+    // notify popup is visible state
+    &.notify-is-visible
+      .logo,
+      .menu-button,
+      .main-section__media,
+      .aside-content,
+      .gradient-layer
+        opacity: 1
+        visibility: visible
+      .headline,
+      .menu-button
+        opacity: 0
+        visibility: hidden
+  // large desktop properties
+  +MQ(XXL)
+    min-height: 654px
+
+// Logo
+.logo
+  position: relative
+  z-index: 9
+  transition: all $animation-duration ease-in-out
+  img
+    width: auto
+  +MQ(L)
+    +position(absolute, 2.4rem null null 0)
+    width: 12rem
+    padding: 2.4rem 0
+    img
+      margin: 0 auto
+
+// Menu button
+.menu-button
+  +position(absolute, 0 0 null null)
+  padding: 2.4rem
+  z-index: 9
+  //opacity: 0
+  transition: opacity $animation-duration ease-in-out
+  +MQ(L)
+    +position(absolute, 2.4rem 2.4rem null null)
+
+// Main section split parts (intro & media)
+.main-section__intro,
+.main-section__media
+  transition: all $animation-duration ease-in-out
+
+// Aside properties
+.main-section__aside
+  position: relative
+  padding: 0
+
+  .aside-content
+    position: relative
+    border-bottom: none
+    padding-top: 2.4rem
+    text-align: center
+    transition: all $animation-duration ease-in-out
+  &.bottom-mobile
+    +position(absolute, null null 2.4rem 0)
+    width: 100%
+  +MQ(L)
+    +position(fixed, 0 null null 0)
+    z-index: 9
+    min-width: auto
+    width: 120px
+    height: 100%
+    padding: 24px 0
+    .aside-content
+      width: 100%
+      height: 100%
+      border-bottom: none
+      border-right: 1px solid $just-right
+    &.bottom-mobile
+      +position(fixed, 0 null auto 0)
+      width: 120px
+
+// Main section content common
+.main-section__content
+  &.absolute
+    +position(absolute, 2.4rem null null 2.4rem)
+    width: calc(100% - 4.8rem)
+    height: calc(100% - 4.8rem)
+  +MQ(L)
+    +position(absolute, 0 0 null null)
+    width: calc(100% - 120px)
+    height: 100%
+    padding-right: 24px
+    &.absolute
+      +position(absolute, 0 0 null auto)
+      width: calc(100% - 120px)
+      height: 100%
+
+// Main section intro
+.main-section__intro
+  padding: 8rem 0
+  .intro-content
+    position: relative
+    opacity: 1
+    transition: all $animation-duration ease-in-out
+    .headline
+      transition: all $animation-duration ease-in-out
+      &.centered-mobile
+        position: absolute
+        +center(y)
+  +MQ(L)
+    padding: 24px 0
+    .intro-content
+      height: 100%
+      min-height: 546px
+      .headline
+        position: absolute
+        +center(y)
+        width: 100%
+        padding: 0 6rem
+  +MQ(XL)
+    .intro-content
+      .headline
+        padding: 0 10rem
+  +MQ(XXL)
+    .intro-content
+      .headline
+        padding: 0 14rem
+
+// Main section media
+.main-section__media
+  position: relative
+  padding: 0
+  height: 600px
+  .media-content
+    position: relative
+    width: 100%
+    height: 100%
+  .media-image
+    +position(absolute, 0 null null 0)
+    width: 100%
+    height: 100%
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+  +MQ(M)
+    height: 760px
+  +MQ(L)
+    padding: 24px 0
+    height: 100%
+    .media-content
+      position: relative
+      height: 100%
+
+// Main section background objects (for split type)
+.main-background-objects
+  +position(absolute, 2.4rem null null 2.4rem)
+  width: calc(100% - 4.8rem)
+  height: calc(100% - 4.8rem)
+  overflow: hidden
+  transition: all $animation-duration + .6s ease-in-out
+  &.transparent
+    +position(absolute, 0 null null 0)
+    width: 100%
+    height: 100%
+  .main-obj-3
+    background-repeat: no-repeat
+    background-size: cover
+  .objects-layer
+    +position(absolute, 0 null null 0)
+    width: 100%
+    height: 100%
+    .main-obj-1,
+    .main-obj-2
+      background-repeat: no-repeat
+      background-size: cover
+    .main-obj-1
+      +position(absolute, 40px -115px null null)
+      width: 230px
+      height: 230px
+    .main-obj-2
+      +position(absolute, null -26px -73px null)
+      width: 113px
+      height: 200px
+  +MQ(M)
+    .objects-layer
+      .main-obj-1
+        +position(absolute, 40px -153px null null)
+        width: 306px
+        height: 306px
+      .main-obj-2
+        +position(absolute, null -35px -97px null)
+        width: 151px
+        height: 267px
+  +MQ(L)
+    +position(absolute, 2.4rem null null 12rem)
+    width: calc(100% - 14.4rem)
+    height: calc(100% - 4.8rem)
+    &.transparent
+      +position(absolute, 0 null null 12rem)
+      width: calc(100% - 12rem)
+      height: 100%
+      .main-obj-3
+        +position(absolute, null 100px 72px null)
+        width: 180px
+        height: 197px
+      .objects-layer
+        .main-obj-1
+          +position(absolute, 24px -153px null null)
+    .objects-layer
+      width: 50%
+      height: 100%
+      .main-obj-1
+        +position(absolute, 0 -153px null null)
+      .main-obj-2
+        +position(absolute, null -35px -97px null)
+  +MQ(XXL)
+    &.transparent
+      .main-obj-3
+        +position(absolute, null 100px 72px null)
+        width: 270px
+        height: 295px
+      .objects-layer
+        .main-obj-1
+          +position(absolute, 24px -230px null null)
+    .objects-layer
+      .main-obj-1
+        +position(absolute, 0 -230px null null)
+        width: 460px
+        height: 460px
+      .main-obj-2
+        +position(absolute, null -52px -146px null)
+        width: 226px
+        height: 400px

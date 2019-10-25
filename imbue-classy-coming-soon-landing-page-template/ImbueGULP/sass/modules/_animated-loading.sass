@@ -1,0 +1,81 @@
+@keyframes fadeInUp
+  from
+    opacity: 0
+    transform: translate3d(0, 50px, 0)
+  to
+    opacity: 1
+    transform: translate3d(0, 0, 0)
+@keyframes fadeInDown
+  from
+    opacity: 0
+    transform: translate3d(0, -50px, 0)
+  to
+    opacity: 1
+    transform: translate3d(0, 0, 0)
+@keyframes fadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+@keyframes fadeInLeft
+  from
+    opacity: 0
+    transform: translate3d(-50px, 0, 0)
+  to
+    opacity: 1
+    transform: none
+
+@keyframes fadeInRight
+  from
+    opacity: 0
+    transform: translate3d(100px, 0, 0)
+  to
+    opacity: 1
+    transform: none
+
+body
+  &.split-loaded
+    // 1-st items loading
+    .main-section
+      animation: $animation-duration ease-in-out .2s 1 both fadeIn
+    .main-section__media
+      .media-content
+        animation: $animation-duration ease-in-out .2s 1 both fadeInRight
+    .main-section__aside
+      animation: $animation-duration ease-in-out .2s 1 both fadeInLeft
+
+    // 2-nd items loading
+    .intro-content
+      animation: $animation-duration ease-in-out .8s 1 both fadeIn
+    .countdown,
+    .socials
+      animation: $animation-duration + .4s ease-in-out .8s 1 both fadeIn
+
+    // 3-rd items loading
+    .main-background-objects
+      .main-obj-1
+        animation: $animation-duration + .4s ease-in-out 1.6s 1 both fadeInDown
+      .main-obj-2
+        animation: $animation-duration + .4s ease-in-out 1.6s 1 both fadeInUp
+
+  &.fullscreen-loaded
+    // 1-st items loading
+    .main-section
+      animation: $animation-duration ease-in-out .2s 1 both fadeIn
+    .main-section__aside
+      animation: $animation-duration ease-in-out .2s 1 both fadeInLeft
+    // 2-nd items loading
+    .intro-content
+      animation: $animation-duration ease-in-out .8s 1 both fadeIn
+    .countdown,
+    .socials
+      animation: $animation-duration + .4s ease-in-out .8s 1 both fadeIn
+    // 3-rd items loading
+    .main-background-objects
+      .main-obj-1
+        animation: $animation-duration + .4s ease-in-out 1.2s 1 both fadeInDown
+      .main-obj-2
+        animation: $animation-duration + .4s ease-in-out 1.2s 1 both fadeInUp
+      .main-obj-3
+        animation: $animation-duration + .4s ease-in-out 1.2s 1 both fadeInRight

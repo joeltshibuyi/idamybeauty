@@ -1,0 +1,86 @@
+.countdown
+  position: absolute
+  left: 0
+  +center(y)
+  width: 100%
+  opacity: 0
+  transition: opacity 1s ease-in-out
+  z-index: 1
+  text-align: center
+
+  #countdown
+    position: relative
+    color: $txt-white
+
+  .help-text
+    display: block
+    font: normal 500 1.2rem/1.2 $default-font
+    text-transform: uppercase
+    letter-spacing: .2em
+    color: $txt-white
+    margin-top: .8rem
+
+  &.countdown-full
+
+    #countdown-large
+      font: normal 700 4rem/1.1 $caption-font
+      letter-spacing: normal
+      color: $txt-white
+
+    .countdown-section
+      display: inline-block
+      margin-right: 2.4rem
+      &:last-of-type
+        margin-right: 0
+
+    .countdown-period
+      display: block
+      font: normal 400 1.2rem/1.7 $default-font
+      letter-spacing: normal
+
+    .help-text
+      margin: 0 0 2.4rem 0
+
+  &.countdown-days
+    position: absolute
+    bottom: auto
+    right: auto
+    left: 0
+    +center(y)
+    width: 100%
+    text-align: center
+
+    #countdown
+      font: normal 600 9rem/.8 $caption-font
+      letter-spacing: 0.05em
+
+    .countdown-period
+      display: none
+
+    .help-text
+      margin: 1.6rem 0 0 0
+
+  +MQ(M)
+    &.countdown-days
+      #countdown
+        font-size: 10rem
+
+    &.countdown-full
+      .countdown-section
+        margin-right: 4rem
+      #countdown-large
+        font-size: 5.6rem
+      .countdown-period
+        font-size: 1.4rem
+
+  +MQ(XXL)
+    .help-text
+      font-size: 1.4rem
+    &.countdown-days
+      #countdown
+        font-size: 12rem
+    &.countdown-full
+      .countdown-section
+        margin-right: 6rem
+      #countdown-large
+        font-size: 7rem
