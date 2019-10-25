@@ -1,0 +1,40 @@
+.reply-group
+  position: absolute
+  +center
+  text-align: center
+  opacity: 0
+  transition: opacity $animation-duration - .3s ease-in-out
+  &.is-visible
+    opacity: 1
+
+.reply-group__icon
+  display: block
+  position: relative
+  font-size: 5rem
+  line-height: 1
+  color: $quicksand
+  &::before
+    background: -webkit-linear-gradient(-45deg, rgba(198,150,129,1) 0%,rgba(219,190,173,1) 30%,rgba(239,171,146,1) 70%,rgba(198,150,129,1) 100%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+
+.reply-group__title
+  font: normal 700 2rem/1.2 $caption-font
+  text-transform: uppercase
+  letter-spacing: 0.025em
+  color: $txt-dark
+  margin-top: .6rem
+  &.light
+    color: $txt-white
+
+.reply-group__text
+  font: normal 400 1.4rem/1.7 $default-font
+  color: $txt-dark
+  &.light
+    color: $txt-white-transparent
+
+.notify
+  .reply-group
+    text-align: left
+    +position(absolute, 0 auto auto 0)
+    transform: translateX(0) translateY(0)
