@@ -1,13 +1,11 @@
 /*! ------------------------------------------------
-   Project Name: Imbue Coming Soon & Landing Page Template
-   Project Description: Imbue - classy and stylish coming soon & landing page template to kick-start your project
-   Tags: imbue, coming soon, under construction, template, coming soon page, landing page, one page, html5, css3
-   Version: 1.0.0
+   Project Name: 
+   Project Description:
+   Version: 2.0.0
    Build Date: January 2019
-   Last Update: January 2019
-   This product is available exclusively on Themeforest
-   Author: mix_design
-   Author URI: http://mixdesign.club
+   Last Update: October 2019
+   Author: Joel Tshibuyi
+   Author URI: 
    File name: main.css
    ------------------------------------------------
 
@@ -41,7 +39,7 @@
 /* Template Backgrounds Start */
 /* ------------------------------------------------*/
 .media-image-1 {
-    background-image: url("http://via.placeholder.com/1000x1200");
+    background-image: url("https://via.placeholder.com/1000x1200");
 }
 
 .fullscreen-bg-1 {
@@ -49,47 +47,47 @@
 }
 
 .fullscreen-bg-2 {
-    background-image: url("http://via.placeholder.com/1920x1080");
+    background-image: url("https://via.placeholder.com/1920x1080");
 }
 
 .slide-dark-1 {
-    background-image: url("http://via.placeholder.com/1000x1200");
+    background-image: url("https://via.placeholder.com/1000x1200");
 }
 
 .slide-dark-2 {
-    background-image: url("http://via.placeholder.com/1000x1200");
+    background-image: url("https://via.placeholder.com/1000x1200");
 }
 
 .slide-dark-3 {
-    background-image: url("http://via.placeholder.com/1000x1200");
+    background-image: url("https://via.placeholder.com/1000x1200");
 }
 
 .slide-light-1 {
-    background-image: url("http://via.placeholder.com/1000x1200");
+    background-image: url("https://via.placeholder.com/1000x1200");
 }
 
 .slide-light-2 {
-    background-image: url("http://via.placeholder.com/1000x1200");
+    background-image: url("https://via.placeholder.com/1000x1200");
 }
 
 .slide-light-3 {
-    background-image: url("http://via.placeholder.com/1000x1200");
+    background-image: url("https://via.placeholder.com/1000x1200");
 }
 
 .about-image {
-    background-image: url("http://via.placeholder.com/1000x1200");
+    background-image: url("https://via.placeholder.com/1000x1200");
 }
 
 .contact-image {
-    background-image: url("http://via.placeholder.com/1000x1200");
+    background-image: url("https://via.placeholder.com/1000x1200");
 }
 
 .team-image-1 {
-    background-image: url("http://via.placeholder.com/900x1200");
+    background-image: url("https://via.placeholder.com/900x1200");
 }
 
 .team-image-2 {
-    background-image: url("http://via.placeholder.com/900x1200");
+    background-image: url("https://via.placeholder.com/900x1200");
 }
 
 .main-background-objects .objects-layer .main-obj-1 {
@@ -705,7 +703,7 @@ h1.light {
 .headline__subtitle {
     display: block;
     font: italic 600 2.8rem/1.2 "CormorantGaramond", serif;
-    color: #C69681;
+    color: #F6F6F6;
     background: -webkit-linear-gradient(-45deg, #c69681 0%, #dbbead 30%, #efab92 70%, #c69681 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
