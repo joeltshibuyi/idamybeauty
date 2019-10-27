@@ -7,7 +7,7 @@
 // Last Update: January 2019
 // This product is available exclusively on Themeforest
 // Author: mix_design
-// Author URI: http://mixdesign.club
+// Author URI: https://mixdesign.club
 // File name: imbue-custom.js
 // ------------------------------------------------
 
@@ -172,9 +172,9 @@ $(function() {
       transition: 'fade2',
       transitionDuration: 2000,
       slides: [
-        { src: "http://via.placeholder.com/1000x1200" },
-        { src: "http://via.placeholder.com/1000x1200" },
-        { src: "http://via.placeholder.com/1000x1200" }
+        { src: "https://via.placeholder.com/1000x1200" },
+        { src: "https://via.placeholder.com/1000x1200" },
+        { src: "https://via.placeholder.com/1000x1200" }
       ],
       animation: [ 'kenburnsUp', 'kenburnsDown', 'kenburnsLeft', 'kenburnsRight' ]
     });
@@ -188,9 +188,9 @@ $(function() {
       transition: 'fade2',
       transitionDuration: 2000,
       slides: [
-        { src: "http://via.placeholder.com/1920x1080" },
-        { src: "http://via.placeholder.com/1920x1080" },
-        { src: "http://via.placeholder.com/1920x1080" }
+        { src: "https://via.placeholder.com/1920x1080" },
+        { src: "https://via.placeholder.com/1920x1080" },
+        { src: "https://via.placeholder.com/1920x1080" }
       ],
       animation: [ 'kenburnsUp', 'kenburnsDown', 'kenburnsLeft', 'kenburnsRight' ]
     });
