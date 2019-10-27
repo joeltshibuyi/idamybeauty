@@ -7,7 +7,7 @@
 // Last Update: January 2019
 // This product is available exclusively on Themeforest
 // Author: mix_design
-// Author URI: http://mixdesign.club
+// Author URI: https://mixdesign.club
 // File name: app-demo.js
 // ------------------------------------------------
 
