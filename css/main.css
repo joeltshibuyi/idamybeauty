@@ -91,23 +91,23 @@
 }
 
 .main-background-objects .objects-layer .main-obj-1 {
-    background-image: url("../img/backgrounds/objects/main-obj-1.svg");
+    background-image: url("../img/backgrounds/objects/main-obj-1.png");
 }
 
 .main-background-objects .objects-layer .main-obj-2 {
-    background-image: url("../img/backgrounds/objects/main-obj-2.svg");
+    background-image: url("../img/backgrounds/objects/main-obj-2.png");
 }
 
 .main-background-objects .main-obj-3 {
-    background-image: url("../img/backgrounds/objects/main-obj-3.svg");
+    background-image: url("../img/backgrounds/objects/main-obj-3.png");
 }
 
 .menu-background-objects .objects-layer .menu-obj-1 {
-    background-image: url("../img/backgrounds/objects/menu-obj-1.svg");
+    background-image: url("../img/backgrounds/objects/menu-obj-1.png");
 }
 
 .menu-background-objects .objects-layer .menu-obj-2 {
-    background-image: url("../img/backgrounds/objects/menu-obj-2.svg");
+    background-image: url("../img/backgrounds/objects/menu-obj-2.png");
 }
 
 /* ------------------------------------------------*/
@@ -702,9 +702,9 @@ h1.light {
 
 .headline__subtitle {
     display: block;
-    font: italic 600 2.8rem/1.2 "CormorantGaramond", serif;
+    font: normal 600 2.8rem/1.2 "CormorantGaramond", serif;
     color: #F6F6F6;
-    background: -webkit-linear-gradient(-45deg, #c69681 0%, #dbbead 30%, #efab92 70%, #c69681 100%);
+    background: -webkit-linear-gradient(-45deg, #FADFD2 30%, #dbbead 10%, #efab92 70%, #c69681 35%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     padding-top: 2.4rem;
@@ -823,7 +823,7 @@ h5.light {
 }
 
 p {
-    font: normal 400 1.6rem/1.7 "Raleway", sans-serif;
+    font: normal bold 400 1.6rem/1.7 "Raleway", sans-serif;
 }
 
 p span {
