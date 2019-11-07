@@ -102,17 +102,19 @@
                     <li>
                         <a href="#0" id="home-trigger">Home</a>
                     </li>
-                    <!--
+
                     <li>
-                        <a href="#0" id="about-trigger">About</a>
+                        <!--                        <a href="#0" id="about-trigger">About</a>-->
+                    </li>
+
+                    <li>
+                        <!--                        <a href="#0" id="portfolio-trigger">Portfolio</a>-->
                     </li>
                     <li>
-                        <a href="#0" id="portfolio-trigger">Portfolio</a>
+                        <!--                        <a href="#0" id="contact-trigger">Contact</a>-->
                     </li>
-                    <li>
-                        <a href="#0" id="contact-trigger">Contact</a>
-                    </li>
--->
+
+
                 </ul>
                 <!-- Main Menu Start -->
 
@@ -175,7 +177,7 @@
 
                             <!-- Headline Start -->
                             <div id="headline" class="headline centered-mobile">
-                                <!--                                <span class="headline__subtitle">Check us out</span>-->
+                                <span class="headline__subtitle">Check us out</span>
                                 <h1 class="light">Coming Soon</h1>
                                 <p class="headline__text.light">Our website is under construction, we will be ready to go soon! <br> We are preparing something amazing and exciting for you. Until then sign up to get be notified. </p>
                                 <div class="headline__btnholder">
@@ -236,16 +238,75 @@
                                             <!-- Reply Messages End-->
 
                                             <!-- Notify Contact Form Start-->
-                                            <form class="form notify-form form-light">
-                                                <input class="" type="email" placeholder="Email Adress*" required>
+                                            <form class="form notify-form2 form-light">
+                                                <input class="form-control" id="email-input" type="email" placeholder="Email Adress*" required>
                                                 <span class="inputs-description">*Required fields</span>
-                                                <button class="btn btn-light-outline" type="submit">
+                                                <button class="btn btn-light-outline" type="button" onClick="submitToAPI(event)">
                                                     <span class="btn-background">
                                                         <span class="btn-caption">Send</span>
                                                     </span>
                                                 </button>
                                             </form>
+
+                                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+                                            <script type="text/javascript">
+                                                function submitToAPI(e) {
+                                                    e.preventDefault();
+                                                    var URL = "https://btv9g5ed90.execute-api.eu-west-2.amazonaws.com/Prod/emails";
+
+                                                    if ($("#email-input").val() == "") {
+                                                        alert("Please enter your email id");
+                                                        return;
+                                                    }
+
+                                                    var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
+                                                    if (!reeamil.test($("#email-input").val())) {
+                                                        alert("Please enter valid email address");
+                                                        return;
+                                                    }
+
+
+                                                    var email = $("#email-input").val();
+
+                                                    var data = {
+                                                        email: email,
+                                                    };
+
+                                                    $.ajax({
+                                                        type: "POST",
+                                                        url: "https://btv9g5ed90.execute-api.eu-west-2.amazonaws.com/Prod/emails",
+                                                        crossDomain: "true",
+                                                        contentType: "application/json; charset=utf-8",
+                                                        data: JSON.stringify(data),
+                                                        cashe: false,
+                                                        success: function() {
+
+                                                            $('.notify').find('.form').addClass('is-hidden');
+                                                            $('.notify').find('.subscription-ok').addClass('is-visible');
+                                                            setTimeout(function() {
+                                                                // Done Functions
+                                                                $('.notify').find('.subscription-ok').removeClass('is-visible');
+                                                                $('.notify').find('.form').delay(300).removeClass('is-hidden');
+                                                                $('.notify-form').trigger("reset");
+                                                            }, 5000);
+                                                        },
+                                                        error: function() {
+                                                            $('.notify').find('.form').addClass('is-hidden');
+                                                            $('.notify').find('.subscription-ok').addClass('is-visible');
+                                                            setTimeout(function() {
+                                                                // Done Functions
+                                                                $('.notify').find('.subscription-ok').removeClass('is-visible');
+                                                                $('.notify').find('.form').delay(3000).removeClass('is-hidden');
+                                                                $('.notify-form').trigger("reset");
+                                                            }, 5000);
+                                                        }
+                                                    });
+                                                }
+
+                                            </script>
                                             <!-- Notify Contact Form End-->
+
+
 
                                         </div>
                                     </div>
@@ -306,22 +367,251 @@
                         <!-- Section Title Start -->
                         <div class="content-block section-title">
                             <span class="section-title__subtitle">About us</span>
-                            <h2 class="light">Just awesome product</h2>
-                            <p class="section-title__text">Lorem ipsum dolor sit amet, ea periculis patrioque quo, nemore debitis elaboraret sit ei, nam ex vidit scaevola. Quo laoreet ceteros at, graece discere repudiare mea id, assueverit dissentiet in duo. Duo ei animal suscipiantur. Ceteros imperdiet hendrerit pri te, ea pri purto qualisque, eu mucius quodsi vim. Ut nostrud rationibus nam, animal partiendo disputationi cu mei. Ne suas sanctus partiendo eam, ei augue choro atomorum nam, cum altera labores voluptaria ei. Ei facete adipisci qualisque vix, ei sea amet mucius delenit.
+                            <h2 class="light">Idamy Beauty</h2>
+                            <p class="section-title__text">A
+                                Aloe Vera
+                                Aloe Barbadensis
 
-                                Ex sit solet congue suscipiantur, ne audire argumentum vim. Oratio forensibus mei no, delenit intellegam ea has. Ei usu bonorum percipitur, in eos persecuti honestatis. Eam lorem clita impedit ei, dolorum pertinacia duo ne. Munere praesent eos et, purto dolor conclusionemque et mei.
+                                The mighty Aloe Vera plant has been used for thousands of years. It’s packed with vitamins and minerals, and is used both internally and topically for its many active ingredients.
 
-                                Ex nec solum dicit aperiri, augue dicant utinam et eos. At mea vitae congue similique, ea eam ignota labitur. Cu sed essent melius accusam, praesent euripidis his ut. Te sit autem assentior.
+                                We use Aloe Vera across our range to cool, soothe and soften, as well as providing texture, antibacterial properties and countless other benefits.
 
-                                Graece quidam eleifend mea te, quo ignota tritani et, et ius soluta ridens facilis. Mea ex bonorum iudicabit intellegebat, in est soleat cetero prompta. Choro alterum mei ex, in sit exerci copiosae consequat. Nam diam vivendum eu, scriptorem definitiones mel an, ut iusto integre fabulas nec. Vis cu consetetur scribentur, his diam laudem conceptam ut. Pro cu facilis quaerendum, primis malorum ius ut.
 
-                                Et sea constituto instructior. Pro cu percipit indoctum, te porro nihil complectitur vis. Denique apeirian quo ex, te deseruisse signiferumque mel. Tota justo facilisis ius id. Has liber impetus at, no ignota quodsi invenire eos.</p>
+                                Avocado
+                                Persea gratissima
+
+                                Avocado is literally packed with natural vitamins and minerals, including vitamin E which is said to promote hair growth, restore the health of hair and prevent split ends. This superfood for the hair has amazing penetrating properties, making it intensely nourishing and moisturising – leaving you with soft, silky, springy curls.
+
+                                We use Avocado Butter – the rich, smooth and creamy butter obtained from the avocado flesh and pulp – in our ‘Moisture Me, Whipped Butter’. We use Avocado Oil – the rich, deep penetrating oil pressed from the avocado fruit – in our ‘DEEP Conditioning Hair Treatment’
+
+
+                                B
+                                Banana
+                                Musa Sapientum
+
+                                Banana is another ‘superfood’ that is great for the hair. It has excellent smoothing, softening and moisturising properties and is rich in magnesium and potassium – both said to prevent hair loss.
+
+                                We use banana powder in our ‘DEEP Conditioning Hair Treatment’ as it packs a powerful punch for dry curls that need an extra boost.
+
+
+                                BTMS
+                                Behentrimonium Methosulfate (and) Cetearyl Alcohol
+
+                                BTMS (or Behentrimonium Methosulfate if you want to be fancy) is a detangling ingredient derived from rapeseed/canola oil. Combined with a good fatty alcohol, it adds slip for detangling, conditions and reduces static.
+
+                                BTMS gives a lovely, silky feel to your hair – which is why we use it in all of our conditioning products (including our ‘Leave In Moisturising Milk’.
+
+
+                                C
+                                Carrot Tissue Oil
+                                Daucus Carota
+
+                                High in beta-carotene, we use this not only for its rich colour, but for its antioxidant properties.
+
+                                Rich in vitamins and essential fatty acids – Carrot Oil is said to help with brittle hair, split ends and dryness.
+
+
+                                Castor Oil
+                                Ricinus Communis
+
+                                Extracted from the seeds of the castor plant, castor oil is a thick, rich, oil – which is great for conditioners and treatments for dry, brittle or damaged hair.
+
+                                Castor oil also acts as a humectant and attracts moisture to the hair. We use castor oil to add shine, moisture and protect your curls.
+
+                                Our Castor Oil is organic.
+
+
+                                Cetyl Alcohol
+                                Cetyl Alcohol
+
+                                Cetyl Alcohol is a vegetable derived fatty alcohol used as a lubricant. It’s a friendly, non-drying alcohol, that leaves your curls feeling moisturised, conditioned and soft.
+
+
+                                Citric Acid
+                                Citric Acid
+
+                                Citric acid is naturally found in high concentrations in citrus fruits such as lemons, oranges and limes.
+
+                                We use citric acid to regulate pH and match our shampoo to the natural pH of your hair. This closes the cuticle, preventing tangles and snagging, as well as protecting the inner hair strand and locking in moisture. It also has anti-bacterial and preservative qualities. Fun fact – Citric Acid is the same thing that gives sweets a sour taste.
+
+
+                                Cocoa Butter
+                                Theobroma Cacao
+
+                                Cocoa Butter is a rich, firm butter known for its deep moisturising properties.
+
+                                It’s perfect for dry, damaged or thirsty curls and promotes elasticity and locks in moisture.
+
+                                Our Cocoa Butter is organic, unrefined and full fragrance, which gives our DEEP Conditioning Hair Treatment it’s chocolatey aroma.
+
+
+                                Coconut Oil
+                                Cocos Nucifera
+
+                                Who doesn’t love this stuff? It’s only right that this popular oil made the cut. Coconut oil is known for its extreme moisturising properties, as it has the ability to penetrate both the skin and hair.
+
+                                We use pure unrefined, organic, coconut oil, which is the perfect addition to our DEEP Conditioning Hair Treatment.
+
+
+                                E
+                                Eco-Cert Preservative
+                                Phenoxyethanol and Caprylyl Glycol
+
+                                Optiphen is a globally-approved, paraben-free, and formaldehyde-free preservative. It’s Eco-Cert approved and provides protection against microbial growth and bacteria.
+
+                                Preservatives are a legal requirement, so we’ve chosen the most friendly option available to ensure that we keep our promise to provide natural, safe and effective products that are fit for purpose.
+
+
+                                F
+                                Fractionated Coconut Oil
+                                Caprylic/Capric Triglyceride
+
+                                Fractionated coconut oil is literally a fraction of coconut oil. It removes the solid components and fatty acids, making a lightweight liquid that penetrates more easily, retaining the same great moisturising properties we love in coconut oil. Fractionated coconut oil is used as a vegetable based alternative to lanolin.
+
+
+                                G
+                                Glycerine
+                                Palm Free
+
+                                Glycerine is a clear liquid that is a natural humectant, attracting moisture and pulling it towards the hair. It’s also an emollient and has great softening/smoothing qualities.
+
+                                We use glycerine because it helps maintain moisture levels in the hair.
+
+                                The glycerine we use is always vegetable derived and is also palm-free.
+
+
+                                Grapefruit Oil
+                                Citrus Grandis
+
+                                Grapefruit oil has a beautiful sharp, sweet citrus scent, and is a another fragrance we love.
+
+                                It’s said to positively affect your mood and revive the mind, and is used widely across aromatherapy.
+
+
+                                H
+                                Honey
+                                Mel
+
+                                Honey is a natural humectant, which has an amazing ability to draw moisture to the hair and keep it there.
+
+                                Honey is perfect for dry hair and also has antibacterial properties. You’ll find honey in our deep conditioner – along with several other moisture loving ingredients!
+
+
+                                Hydrolysed Oat Protein
+                                Avena Sativa
+
+                                Hydrolysed oat protein is an absorbable form of protein that creates a protective film on the hair that almost feels non-existent. The process of hydrolysation creates smaller particles for the hair to absorb, which moisturises and conditions, reduces breakage and adds a silky feel.
+
+                                It’s used as in cosmetics as a vegan alternative to silks.
+
+
+                                L
+                                Lemon Oil
+                                Citrus Medica Limonum
+
+                                Lemon oil has a sharp, clean, citrusy smell and compliments our other essential oils perfectly.
+
+                                It’s said to help you make decisions and improve your concentration. Great for all that thinking we do in the shower!
+
+
+                                M
+                                Mandarin Essential Oil
+                                Citrus Nobilis
+
+                                Mandarin is a tangy and zesty essential oil that is said to relieve stress.
+
+                                So what are you waiting for? Grab our ‘Soft Clean SLS Free Shampoo,’ jump in the shower and wash those woes away.
+
+                                From bloom to harvest this sweet top note takes between 6 and 10 months. Well worth the wait.
+
+
+                                Meadowfoam Seed Oil
+                                Limnanthes Alba
+
+                                Meadowfoam Seed Oil is known as a ‘miracle oil’ because of it’s amazing qualities. It’s easily and quickly absorbed, leaving little or no residue, has a high vitamin E content and is a natural antioxidant. It leaves a silky feel on the hair and is known as a natural silicone like substance.
+
+                                Only right we used it in one of the most important products in your curl care routine right? So you’ll find it in our ‘Leave In Moisturising Milk’.
+
+
+                                Moroccan Rhassoul Clay
+                                Rhassoul
+
+                                Rhassoul Clay is a natural mineral rich clay, mined in Morcocco. It has a high percentage of naturally occurring trace minerals such as silica and magnesium – which are required for strong, healthy hair and luscious curls and kinks.
+
+                                The trace minerals draw out toxins, dirt and product build up from your scalp and hair, acting as a natural cleanser that literally lifts everything away, unearthing your kinks and curls true potential.
+
+
+                                Murumuru Butter
+                                Astrocaryum Murumuru
+
+                                Murumuru butter is an excellent emollient with amazing softening and smoothing abilities. It helps retain water by creating a protective film – making it ideal for dry or damaged hair and your delicate curls and kinks.
+
+                                We use Murumuru Butter in our ‘Leave In Moisturising Milk’ for the protection your curls need right after washing.
+
+
+                                P
+                                Panthenol
+                                Pro-Vitamin B5
+
+                                Panthenol, also known as Pro-Vitamin B5, is a great vitamin for the hair. It lubricates the hair shaft providing protection, whilst softenening and moisturising – making the hair easier to manage.
+
+                                We use this B vitamin in a range of our products for it’s long lasting moisturising properties and to add natural smoothness and shine.
+
+
+                                S
+                                Shea Butter
+                                Butyrospermum Parkii
+
+                                Shea Butter is a much liked and sought after butter making it’s way around the natural product market. Nourishing, moisturising, soothing, softening, hydrating, provides lustre, adds elasticity to hair.. need we go on?
+
+                                We use pure unrefined shea butter from Ghana. Unrefined shea butter is produced without the use or herbicides and pesticides as it grows in the wild and is not cultivated.
+
+
+                                SLS Free Bubbles
+                                Coco and Decyl Glucosides
+
+                                What makes our bubbles if we don’t use harsh surfactants like Sodium Lauryl Sulfates and Sodium Laureth Ethyl Sulfates?
+
+                                Well, we use two friendly foaming agents from a family of ‘green’ surfactants that were created as an alternative to SLS and SLES’s.
+
+                                Coco-glucoside is completely biodegradable and derives from renewable raw materials such as coconut oil and fruit sugars. Decyl-glucoside is a combination of plant based fatty alcohols and glucose sugars. Both perfect for delicate curls, as they’re gentle enough not to strip away your natural oils.
+
+
+                                Soy Bean Oil
+                                Glycine Soja
+
+                                Soy Bean Oil is predominantly used in soap making, to provide a soft, gentle, lather. We use it in our shampoo as it’s also a good base for haircare that provides smoothing and moisturising properties.
+
+
+                                Sweet Almond Oil
+                                Prunus Amygdalis Dulcis
+
+                                Sweet Almond Oil is one of the most popular carrier oils used for a variety of uses. This oil has a light texture and is easily absorbed, which increases elasticity, leaving a silky satin finish. It’s also rich in vitamins and moisturises, nourishes and protects.
+
+
+                                Sweet Orange Essential Oil
+                                Citrus Sinensis
+
+                                Sweet orange essential oil has a beautiful sweet citrus scent, we love this fragrance – so much so that we use it across our entire line. It’s calming, warming and uplifting and is used for a variety of uses from aromatherapy, to food and cosmetics.
+
+
+                                Vitamin E
+                                Tocopherol
+
+                                Vitamin E is a powerful antioxidant that improves texture, increases moisture content and studies also show that it promotes hair growth. Vitamin E can help protect against UV damage and is used widely across the industry, and the Big Hair Beauty range.
+
+
+                                Xanthan Gum
+                                Xanthan Gum
+
+                                Xanthan Gum is a fine powder derived from the fermentation of sugar. It’s used to add texture, reduce stickiness and thicken naturally. You’ll also commonly find xanthan gum in food products.
+                            </p>
                         </div>
                         <!-- Section Title End -->
 
-                        <!-- Section Content Block Start -->
+                        <!-- Section Content Block Start --
                         <div class="content-block">
-                            <!-- Skillbar single item -->
+                            <!-- Skillbar single item --
                             <div class="show-skillbar">
                                 <div class="skillbar light" data-percent="96">
                                     <span class="skillbar-title light">Design</span>
@@ -329,7 +619,7 @@
                                     <span class="skill-bar-percent light"></span>
                                 </div>
                             </div>
-                            <!-- Skillbar single item -->
+                            <!-- Skillbar single item --
                             <div class="show-skillbar">
                                 <div class="skillbar light" data-percent="84">
                                     <span class="skillbar-title light">Branding</span>
@@ -337,7 +627,7 @@
                                     <span class="skill-bar-percent light"></span>
                                 </div>
                             </div>
-                            <!-- Skillbar single item -->
+                            <!-- Skillbar single item --
                             <div class="show-skillbar">
                                 <div class="skillbar light" data-percent="90">
                                     <span class="skillbar-title light">Marketing</span>
@@ -345,7 +635,7 @@
                                     <span class="skill-bar-percent light"></span>
                                 </div>
                             </div>
-                            <!-- Skillbar single item -->
+                            <!-- Skillbar single item --
                             <div class="show-skillbar">
                                 <div class="skillbar light" data-percent="73">
                                     <span class="skillbar-title light">Selling</span>
@@ -816,4 +1106,6 @@
     <script src="js/imbue-custom.js"></script>
     <!-- Load Scripts End-->
 
-</body></html>
+</body>
+
+</html>
