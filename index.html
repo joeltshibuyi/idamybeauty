@@ -155,8 +155,8 @@
         <!-- Main Background Objects End -->
 
         <!-- Logo Start -->
-        <div class="logo">
-            <img src="img/idamy-logo.png" alt="idamy beauty - Coming Soon">
+        <div href="#" class="logo" onclick="https://idamybeauty.com">
+            <img src="img/idamy-logo.png" alt="idamy beauty">
         </div>
         <!-- Logo End -->
 
@@ -241,6 +241,7 @@
                                             <form class="form notify-form2 form-light">
                                                 <input class="form-control" id="email-input" type="email" placeholder="Email Adress*" required>
                                                 <span class="inputs-description">*Required fields</span>
+
                                                 <button class="btn btn-light-outline" type="button" onClick="submitToAPI(event)">
                                                     <span class="btn-background">
                                                         <span class="btn-caption">Send</span>
@@ -255,13 +256,13 @@
                                                     var URL = "https://btv9g5ed90.execute-api.eu-west-2.amazonaws.com/Prod/emails";
 
                                                     if ($("#email-input").val() == "") {
-                                                        alert("Please enter your email id");
+                                                        alert("Please enter a valid email address");
                                                         return;
                                                     }
 
                                                     var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
                                                     if (!reeamil.test($("#email-input").val())) {
-                                                        alert("Please enter valid email address");
+                                                        alert("Please enter a valid email address");
                                                         return;
                                                     }
 

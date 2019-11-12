@@ -1,15 +1,4 @@
 // ------------------------------------------------
-// Project Name: Imbue Coming Soon & Landing Page Template
-// Project Description: Imbue - classy and stylish coming soon & landing page template to kick-start your project
-// Tags: imbue, coming soon, under construction, template, coming soon page, landing page, one page, html5, css3
-// Version: 1.0.0
-// Build Date: January 2019
-// Last Update: January 2019
-// This product is available exclusively on Themeforest
-// Author: mix_design
-// Author URI: https://mixdesign.club
-// File name: imbue-custom.js
-// ------------------------------------------------
 
 // ------------------------------------------------
 // Table of Contents

@@ -91,23 +91,23 @@
 }
 
 .main-background-objects .objects-layer .main-obj-1 {
-    background-image: url("../img/backgrounds/objects/main-obj-1.svg");
+    background-image: url("../img/backgrounds/objects/main-obj-1.png");
 }
 
 .main-background-objects .objects-layer .main-obj-2 {
-    background-image: url("../img/backgrounds/objects/main-obj-2.svg");
+    background-image: url("../img/backgrounds/objects/main-obj-2.png");
 }
 
 .main-background-objects .main-obj-3 {
-    background-image: url("../img/backgrounds/objects/main-obj-3.svg");
+    background-image: url("../img/backgrounds/objects/main-obj-3.png");
 }
 
 .menu-background-objects .objects-layer .menu-obj-1 {
-    background-image: url("../img/backgrounds/objects/menu-obj-1.svg");
+    background-image: url("../img/backgrounds/objects/menu-obj-1.png");
 }
 
 .menu-background-objects .objects-layer .menu-obj-2 {
-    background-image: url("../img/backgrounds/objects/menu-obj-2.svg");
+    background-image: url("../img/backgrounds/objects/menu-obj-2.png");
 }
 
 /* ------------------------------------------------*/
